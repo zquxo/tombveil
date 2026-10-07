@@ -1,0 +1,508 @@
+/* =========================================================
+   TOMBVEIL
+   LORE PAGE CSS
+========================================================= */
+
+
+/* =========================================================
+   LORE INTRO
+========================================================= */
+
+.lore-intro {
+
+    max-width: 760px;
+
+    margin: 0 auto 90px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   LORE BOX
+========================================================= */
+
+.lore-box {
+
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 0 auto 80px;
+
+    padding: 60px 65px;
+
+    border:
+        1px solid
+        rgba(74, 23, 23, 0.3);
+
+    background:
+        rgba(229, 219, 196, 0.42);
+
+    box-shadow:
+        0 20px 50px
+        rgba(50, 35, 15, 0.08);
+
+}
+
+
+.lore-box:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   LORE CROSS
+========================================================= */
+
+.lore-box::before {
+
+    content: "†";
+
+    position: absolute;
+
+    top: -17px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        0 18px;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--wine);
+
+    font-size: 1.1rem;
+
+}
+
+
+/* =========================================================
+   INNER BORDER
+========================================================= */
+
+.lore-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        1px solid
+        rgba(74, 23, 23, 0.08);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.lore-number {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom: 15px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 4px;
+
+    color:
+        var(--gold);
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.lore-title {
+
+    position: relative;
+
+    z-index: 1;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size: 1.8rem;
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+    color:
+        var(--wine);
+
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.lore-divider {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 60px;
+
+    height: 1px;
+
+    margin: 25px 0;
+
+    background:
+        var(--gold);
+
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.lore-text {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-top: 25px;
+
+    font-size: 0.9rem;
+
+    line-height: 2.4;
+
+    color:
+        var(--ink-light);
+
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.lore-note {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-top: 30px;
+
+    padding:
+        18px 20px;
+
+    border-left:
+        2px solid
+        var(--wine);
+
+    background:
+        rgba(74, 23, 23, 0.045);
+
+    font-size: 0.72rem;
+
+    line-height: 2;
+
+    color:
+        rgba(36, 30, 24, 0.6);
+
+}
+
+
+/* =========================================================
+   DARK LORE
+========================================================= */
+
+.lore-dark {
+
+    background:
+        #12100e;
+
+    color:
+        var(--paper);
+
+}
+
+
+.lore-dark .lore-box {
+
+    border-color:
+        rgba(155, 131, 85, 0.25);
+
+    background:
+        rgba(229, 219, 196, 0.035);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.35);
+
+}
+
+
+.lore-dark .lore-box::before {
+
+    background:
+        #12100e;
+
+    color:
+        var(--gold);
+
+}
+
+
+.lore-dark .lore-title {
+
+    color:
+        var(--paper);
+
+}
+
+
+.lore-dark .lore-text {
+
+    color:
+        rgba(229, 219, 196, 0.62);
+
+}
+
+
+.lore-dark .lore-note {
+
+    border-left-color:
+        var(--gold);
+
+    background:
+        rgba(155, 131, 85, 0.05);
+
+    color:
+        rgba(229, 219, 196, 0.45);
+
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.lore-quote {
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    padding: 80px 30px;
+
+    text-align: center;
+
+}
+
+
+.lore-quote-mark {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 4rem;
+
+    line-height: 0.5;
+
+    color:
+        var(--gold);
+
+    opacity: 0.5;
+
+}
+
+
+.lore-quote-text {
+
+    margin-top: 35px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        clamp(1rem, 2vw, 1.35rem);
+
+    line-height: 2.2;
+
+    letter-spacing: 2px;
+
+    color:
+        var(--paper);
+
+}
+
+
+.lore-quote-caption {
+
+    margin-top: 30px;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(229, 219, 196, 0.35);
+
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+.lore-box {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    animation:
+        loreAppear 0.8s ease forwards;
+
+}
+
+
+.lore-box:nth-child(2) {
+
+    animation-delay:
+        0.12s;
+
+}
+
+
+.lore-box:nth-child(3) {
+
+    animation-delay:
+        0.24s;
+
+}
+
+
+.lore-box:nth-child(4) {
+
+    animation-delay:
+        0.36s;
+
+}
+
+
+@keyframes loreAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .lore-box {
+
+        padding:
+            45px 30px;
+
+        margin-bottom:
+            60px;
+
+    }
+
+
+    .lore-title {
+
+        font-size:
+            1.4rem;
+
+        letter-spacing:
+            3px;
+
+    }
+
+
+    .lore-text {
+
+        font-size:
+            0.82rem;
+
+        line-height:
+            2.2;
+
+    }
+
+
+    .lore-quote {
+
+        padding:
+            60px 15px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .lore-box {
+
+        padding:
+            40px 22px;
+
+    }
+
+
+    .lore-title {
+
+        font-size:
+            1.25rem;
+
+    }
+
+}

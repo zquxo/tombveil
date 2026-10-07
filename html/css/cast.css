@@ -1,0 +1,1027 @@
+/* =========================================================
+   TOMBVEIL
+   CAST PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   CAST GRID
+========================================================= */
+
+.cast-book-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   BOOK CARD
+========================================================= */
+
+.book-card {
+
+    position: relative;
+
+    aspect-ratio:
+        0.72 / 1;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16130f,
+            #29231a
+        );
+
+    border:
+        1px solid
+        rgba(210, 190, 145, 0.25);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.45);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+
+}
+
+
+.book-card:hover {
+
+    transform:
+        translateY(-10px)
+        rotate(-0.5deg);
+
+    box-shadow:
+        0 25px 50px
+        rgba(0, 0, 0, 0.65);
+
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.book-card-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.72;
+
+    filter:
+        grayscale(15%)
+        contrast(1.05);
+
+    transition:
+        transform 0.7s ease,
+        opacity 0.7s ease,
+        filter 0.7s ease;
+
+}
+
+
+.book-card:hover .book-card-image {
+
+    transform:
+        scale(1.04);
+
+    opacity:
+        0.9;
+
+    filter:
+        grayscale(0%)
+        contrast(1.1);
+
+}
+
+
+/* =========================================================
+   CARD OVERLAY
+========================================================= */
+
+.book-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.1) 25%,
+            rgba(0,0,0,0.85) 100%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.book-card-content {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 25px;
+    right: 25px;
+    bottom: 24px;
+
+    color:
+        #e8dfcc;
+
+}
+
+
+.book-card-number {
+
+    display: block;
+
+    margin-bottom:
+        10px;
+
+    font-size:
+        0.65rem;
+
+    letter-spacing:
+        0.25em;
+
+    opacity:
+        0.55;
+
+}
+
+
+.book-card-name {
+
+    margin:
+        0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        1.45rem;
+
+    letter-spacing:
+        0.08em;
+
+    text-shadow:
+        0 2px 10px
+        rgba(0,0,0,0.7);
+
+}
+
+
+.book-card-open {
+
+    display: block;
+
+    margin-top:
+        12px;
+
+    font-size:
+        0.55rem;
+
+    letter-spacing:
+        0.25em;
+
+    opacity:
+        0.45;
+
+}
+
+
+/* =========================================================
+   BOOK MODAL BACKDROP
+========================================================= */
+
+.book-overlay {
+
+    position: fixed;
+
+    z-index: 9999;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        rgba(5, 4, 3, 0.92);
+
+    backdrop-filter:
+        blur(12px);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+
+}
+
+
+.book-overlay.active {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+}
+
+
+/* =========================================================
+   BOOK
+========================================================= */
+
+.book {
+
+    position: relative;
+
+    width:
+        min(1100px, 94vw);
+
+    height:
+        min(700px, 82vh);
+
+    perspective:
+        2000px;
+
+}
+
+
+/* =========================================================
+   BOOK INNER
+========================================================= */
+
+.book-inner {
+
+    position: relative;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        flex;
+
+    background:
+        #d7c9aa;
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,0.75);
+
+    transform:
+        scale(0.8)
+        rotateX(8deg);
+
+    opacity:
+        0;
+
+    transition:
+        transform 0.8s
+        cubic-bezier(.16,1,.3,1),
+        opacity 0.5s ease;
+
+}
+
+
+.book-overlay.active .book-inner {
+
+    transform:
+        scale(1)
+        rotateX(0deg);
+
+    opacity:
+        1;
+
+}
+
+
+/* =========================================================
+   BOOK PAGES
+========================================================= */
+
+.book-page {
+
+    position: relative;
+
+    width:
+        50%;
+
+    height:
+        100%;
+
+    overflow:
+        hidden;
+
+    color:
+        #282117;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255,255,255,0.35),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            90deg,
+            #cfc09f,
+            #e0d4b8,
+            #cbbd9e
+        );
+
+}
+
+
+.book-page.left {
+
+    padding:
+        45px;
+
+    border-right:
+        1px solid
+        rgba(60,45,25,0.3);
+
+    box-shadow:
+        inset -12px 0 25px
+        rgba(60,45,25,0.12);
+
+}
+
+
+.book-page.right {
+
+    padding:
+        55px 60px;
+
+    box-shadow:
+        inset 12px 0 25px
+        rgba(60,45,25,0.12);
+
+}
+
+
+/* =========================================================
+   BOOK TEXTURE
+========================================================= */
+
+.book-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0.16;
+
+    background-image:
+
+        radial-gradient(
+            rgba(50,35,15,0.4) 0.6px,
+            transparent 0.6px
+        );
+
+    background-size:
+        5px 5px;
+
+    mix-blend-mode:
+        multiply;
+
+}
+
+
+/* =========================================================
+   CENTER BINDING
+========================================================= */
+
+.book-inner::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index:
+        10;
+
+    top: 0;
+    bottom: 0;
+
+    left:
+        50%;
+
+    width:
+        25px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(50,35,15,0.22),
+            rgba(255,255,255,0.12),
+            transparent
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   LEFT PHOTO
+========================================================= */
+
+.book-photo-frame {
+
+    position: relative;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+.book-photo {
+
+    position: relative;
+
+    width:
+        78%;
+
+    max-height:
+        78%;
+
+    object-fit:
+        contain;
+
+    filter:
+        sepia(12%)
+        contrast(1.05);
+
+    box-shadow:
+        0 12px 30px
+        rgba(40,25,10,0.35);
+
+    border:
+        8px solid
+        rgba(240,230,205,0.6);
+
+}
+
+
+/* =========================================================
+   PHOTO LABEL
+========================================================= */
+
+.photo-label {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom:
+        10px;
+
+    font-size:
+        0.55rem;
+
+    letter-spacing:
+        0.25em;
+
+    opacity:
+        0.45;
+
+}
+
+
+/* =========================================================
+   RIGHT PAGE
+========================================================= */
+
+.book-small-title {
+
+    position: relative;
+
+    margin-bottom:
+        25px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        0.7rem;
+
+    letter-spacing:
+        0.3em;
+
+    opacity:
+        0.5;
+
+}
+
+
+.book-number {
+
+    position: absolute;
+
+    top:
+        35px;
+
+    right:
+        45px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        0.7rem;
+
+    opacity:
+        0.4;
+
+}
+
+
+.book-name {
+
+    position: relative;
+
+    margin:
+        0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(2rem, 4vw, 4rem);
+
+    font-weight:
+        normal;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        0.04em;
+
+}
+
+
+.book-role {
+
+    margin-top:
+        18px;
+
+    font-size:
+        0.65rem;
+
+    letter-spacing:
+        0.25em;
+
+    opacity:
+        0.5;
+
+}
+
+
+.book-divider {
+
+    width:
+        100%;
+
+    height:
+        1px;
+
+    margin:
+        30px 0;
+
+    background:
+        rgba(50,35,15,0.3);
+
+}
+
+
+.book-profile-title {
+
+    margin-bottom:
+        15px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        0.9rem;
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+.book-profile {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        0.95rem;
+
+    line-height:
+        2;
+
+    opacity:
+        0.78;
+
+}
+
+
+/* =========================================================
+   BOOK FOOTER
+========================================================= */
+
+.book-footer {
+
+    position: absolute;
+
+    left:
+        60px;
+
+    right:
+        60px;
+
+    bottom:
+        30px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+}
+
+
+.book-page-number {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        0.65rem;
+
+    letter-spacing:
+        0.2em;
+
+    opacity:
+        0.4;
+
+}
+
+
+/* =========================================================
+   BOOK NAVIGATION
+========================================================= */
+
+.book-navigation {
+
+    position: absolute;
+
+    z-index:
+        20;
+
+    bottom:
+        -65px;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+}
+
+
+.book-nav-button {
+
+    padding:
+        9px 18px;
+
+    border:
+        1px solid
+        rgba(230,220,195,0.25);
+
+    background:
+        rgba(0,0,0,0.3);
+
+    color:
+        rgba(240,235,220,0.75);
+
+    font-size:
+        0.6rem;
+
+    letter-spacing:
+        0.2em;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.book-nav-button:hover {
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-color:
+        rgba(230,220,195,0.5);
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.book-close {
+
+    position: absolute;
+
+    z-index:
+        30;
+
+    top:
+        -45px;
+
+    right:
+        0;
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size:
+        0.6rem;
+
+    letter-spacing:
+        0.2em;
+
+    cursor:
+        pointer;
+
+}
+
+
+.book-close:hover {
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .cast-book-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .book {
+
+        height:
+            80vh;
+
+    }
+
+
+    .book-page.left {
+
+        padding:
+            25px;
+
+    }
+
+
+    .book-page.right {
+
+        padding:
+            35px;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .cast-book-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            12px;
+
+    }
+
+
+    .book {
+
+        width:
+            94vw;
+
+        height:
+            80vh;
+
+    }
+
+
+    .book-inner {
+
+        display:
+            block;
+
+        overflow-y:
+            auto;
+
+    }
+
+
+    .book-page {
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        min-height:
+            50%;
+
+    }
+
+
+    .book-page.left {
+
+        height:
+            45%;
+
+    }
+
+
+    .book-page.right {
+
+        min-height:
+            55%;
+
+        padding:
+            35px 30px 80px;
+
+    }
+
+
+    .book-inner::after {
+
+        display:
+            none;
+
+    }
+
+
+    .book-photo {
+
+        width:
+            55%;
+
+        max-height:
+            90%;
+
+    }
+
+
+    .book-name {
+
+        font-size:
+            2rem;
+
+    }
+
+
+    .book-navigation {
+
+        bottom:
+            -55px;
+
+    }
+
+}
