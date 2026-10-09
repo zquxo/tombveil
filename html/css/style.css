@@ -1,0 +1,1752 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;500&display=swap'
+);
+
+/* ========================================
+   TOMBVEIL CUSTOM FONT
+======================================== */
+
+@font-face {
+    font-family: "634-hexadevil";
+    src: url("../../font/634-hexadevil.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --black: #0d0c0b;
+
+    --black-soft: #151311;
+
+    --paper: #e5dbc4;
+
+    --paper-dark: #cfc2a6;
+
+    --ink: #241e18;
+
+    --ink-light: #756958;
+
+    --wine: #4a1717;
+
+    --wine-light: #6c2525;
+
+    --gold: #9b8355;
+
+    --white: #f0eadc;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background:
+        var(--black);
+
+    color:
+        var(--paper);
+
+    font-family:
+        'Noto Serif JP',
+        serif;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+/* ========================================
+   PAGE TITLES
+======================================== */
+
+.page-title {
+    font-family: "634-hexadevil", serif;
+
+    letter-spacing: 6px;
+
+    font-weight: normal;
+
+    color: var(--white);
+}
+/* =========================================================
+   ATMOSPHERE
+========================================================= */
+
+.atmosphere {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    opacity: 0.18;
+
+    background-image:
+
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+/* ========================================
+   TOMBVEIL NAVIGATION
+======================================== */
+
+.tomb-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 86px;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(8, 7, 6, 0.92),
+            rgba(8, 7, 6, 0.55),
+            transparent
+        );
+
+    backdrop-filter: blur(5px);
+
+    border-bottom: 1px solid rgba(205, 195, 175, 0.05);
+
+    transition:
+        height 0.45s cubic-bezier(.22, 1, .36, 1),
+        background 0.45s ease,
+        backdrop-filter 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+/* ========================================
+   スクロールした状態
+======================================== */
+
+.tomb-navbar.scrolled {
+    height: 64px;
+
+    background:
+        rgba(8, 7, 6, 0.94);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid rgba(190, 170, 125, 0.18);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ========================================
+   ナビ内部
+======================================== */
+
+.nav-container {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ========================================
+   ロゴ
+======================================== */
+
+.tomb-logo {
+    position: relative;
+
+    display: block;
+
+    font-family: "634-hexadevil", serif;
+
+    font-size: 1.2rem;
+    letter-spacing: 7px;
+
+    color: var(--white);
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    transition:
+        font-size 0.45s ease,
+        letter-spacing 0.45s ease,
+        color 0.35s ease,
+        text-shadow 0.35s ease;
+}
+
+
+.tomb-navbar.scrolled .tomb-logo {
+    font-size: 1rem;
+    letter-spacing: 5px;
+}
+
+
+/* ロゴホバー */
+
+.tomb-logo:hover {
+    color: var(--gold);
+
+    text-shadow:
+        0 0 12px rgba(190, 170, 125, 0.25);
+}
+
+
+/* ========================================
+   メニュー
+======================================== */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ========================================
+   メニューリンク
+======================================== */
+
+.nav-menu a {
+    position: relative;
+
+    display: block;
+
+    padding: 8px 0;
+
+    font-family: "634-hexadevil", serif;
+
+    font-size: 0.58rem;
+    letter-spacing: 2.5px;
+
+    color: rgba(240, 234, 220, 0.62);
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.25s ease;
+}
+
+
+/* ========================================
+   下線
+======================================== */
+
+.nav-menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 1px;
+
+    width: 0;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            var(--gold),
+            transparent
+        );
+
+    transform: translateX(-50%);
+
+    transition:
+        width 0.4s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* ========================================
+   ホバー
+======================================== */
+
+.nav-menu a:hover {
+    color: var(--white);
+
+    transform: translateY(-2px);
+}
+
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   現在のページ
+======================================== */
+
+.nav-menu a.active {
+    color: var(--white);
+}
+
+
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   クリック時
+======================================== */
+
+.nav-menu a:active {
+    transform: translateY(1px) scale(0.96);
+}
+
+
+/* ========================================
+   下に細い装飾ライン
+======================================== */
+
+.tomb-navbar::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -1px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transform: translateX(-50%);
+
+    opacity: 0;
+
+    transition:
+        width 0.6s ease,
+        opacity 0.6s ease;
+}
+
+
+.tomb-navbar.scrolled::after {
+    width: 35%;
+    opacity: 0.35;
+}
+
+
+.nav-container {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.tomb-logo {
+
+    font-family:
+        '634-hexadevil',
+        serif;
+
+    font-size: 1.2rem;
+
+    letter-spacing: 7px;
+
+    color: var(--white);
+
+    transition: 0.4s;
+
+}
+
+
+.tomb-logo:hover {
+
+    color: var(--gold);
+
+}
+
+
+.nav-menu {
+
+    display: flex;
+
+    gap: 35px;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+.nav-menu a {
+
+    position: relative;
+
+    font-family:
+        '634-hexadevil',
+        serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(240,234,220,0.75);
+
+    transition: 0.4s;
+
+}
+
+
+.nav-menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 1px;
+
+    background:
+        var(--gold);
+
+    transition: 0.4s;
+
+}
+
+
+.nav-menu a:hover {
+
+    color:
+        var(--white);
+
+}
+
+
+.nav-menu a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(100,40,30,0.18),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #161311,
+            #080706
+        );
+
+}
+
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            transparent 20%,
+            rgba(0,0,0,0.75) 90%
+        );
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.45),
+            transparent,
+            rgba(0,0,0,0.45)
+        );
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    animation:
+        heroAppear 1.8s ease both;
+
+}
+
+
+.hero-small {
+
+    margin-bottom: 25px;
+
+    font-family:
+        '634-hexadevil',
+        serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 7px;
+
+    color:
+        var(--gold);
+
+}
+
+
+.hero-title {
+
+    font-family:
+        '634-hexadevil',
+        serif;
+
+    font-size:
+        clamp(4rem, 11vw, 10rem);
+
+    font-weight: 400;
+
+    letter-spacing: 18px;
+
+    line-height: 1;
+
+    margin-right: -18px;
+
+    color:
+        var(--white);
+
+    text-shadow:
+        0 0 40px rgba(0,0,0,0.8);
+
+}
+
+
+.hero-subtitle {
+
+    margin-top: 25px;
+
+    font-family:
+        '634-hexadevil',
+        serif;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 8px;
+
+    color:
+        rgba(240,234,220,0.55);
+
+}
+
+
+.hero-line {
+
+    width: 80px;
+
+    height: 1px;
+
+    margin: 35px auto;
+
+    background:
+        var(--gold);
+
+}
+
+
+.hero-scroll {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(240,234,220,0.45);
+
+}
+
+
+.hero-scroll span {
+
+    display: block;
+
+    width: 1px;
+
+    height: 45px;
+
+    background:
+        var(--gold);
+
+    animation:
+        scrollLine 2s infinite;
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.tomb-button {
+
+    display: inline-block;
+
+    padding: 15px 38px;
+
+    border:
+        1px solid rgba(155,131,85,0.7);
+
+    font-family:
+        '634-hexadevil',
+        serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 4px;
+
+    color:
+        var(--paper);
+
+    background:
+        rgba(0,0,0,0.15);
+
+    transition:
+        0.4s;
+
+}
+
+
+.tomb-button:hover {
+
+    color:
+        var(--white);
+
+    border-color:
+        var(--gold);
+
+    background:
+        var(--wine);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4);
+
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+
+    position: relative;
+
+    padding:
+        130px 0;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--ink);
+
+}
+
+
+.section-dark {
+
+    background:
+        #12100e;
+
+    color:
+        var(--paper);
+
+}
+
+
+.section-label {
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        0.6rem;
+
+    letter-spacing:
+        5px;
+
+    color:
+        var(--wine);
+
+}
+
+
+.section-dark .section-label {
+
+    color:
+        var(--gold);
+
+}
+
+
+.section-title {
+
+    margin-top:
+        18px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        clamp(2rem, 5vw, 4rem);
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        7px;
+
+}
+
+
+.section-text {
+
+    max-width:
+        650px;
+
+    margin:
+        35px auto 0;
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        2.3;
+
+    color:
+        var(--ink-light);
+
+}
+
+
+.section-dark .section-text {
+
+    color:
+        rgba(229,219,196,0.6);
+
+}
+
+
+.section-ornament {
+
+    margin-top:
+        45px;
+
+    font-size:
+        1.5rem;
+
+    color:
+        var(--wine);
+
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card-link {
+
+    display: block;
+
+    height: 100%;
+
+}
+
+
+.tomb-card {
+
+    height: 100%;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(229,219,196,0.15);
+
+    background:
+        #1a1714;
+
+    transition:
+        0.5s;
+
+}
+
+
+.tomb-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(155,131,85,0.6);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.5);
+
+}
+
+
+.card-image {
+
+    position: relative;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    background:
+        #26211c;
+
+}
+
+
+.card-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.8),
+            transparent 60%
+        );
+
+}
+
+
+.card-image span {
+
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 15px;
+
+    z-index: 2;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 3px;
+
+    color:
+        var(--gold);
+
+}
+
+
+.cast-image {
+
+    background:
+        linear-gradient(
+            135deg,
+            #241a19,
+            #0d0b0a
+        );
+
+}
+
+
+.world-image {
+
+    background:
+        linear-gradient(
+            135deg,
+            #201d18,
+            #080706
+        );
+
+}
+
+
+.lore-image {
+
+    background:
+        linear-gradient(
+            135deg,
+            #211817,
+            #090707
+        );
+
+}
+
+
+.card-body {
+
+    padding:
+        30px;
+
+}
+
+
+.card-number {
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        0.6rem;
+
+    letter-spacing:
+        4px;
+
+    color:
+        var(--gold);
+
+}
+
+
+.card-title {
+
+    margin-top:
+        10px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        1.7rem;
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        5px;
+
+}
+
+
+.card-text {
+
+    margin-top:
+        15px;
+
+    color:
+        rgba(229,219,196,0.55);
+
+    font-size:
+        0.8rem;
+
+    line-height:
+        2;
+
+}
+
+
+.card-more {
+
+    display:
+        inline-block;
+
+    margin-top:
+        25px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        0.55rem;
+
+    letter-spacing:
+        3px;
+
+    color:
+        var(--gold);
+
+}
+
+
+/* =========================================================
+   EVENT
+========================================================= */
+
+.event-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e5dbc4,
+            #cfc2a6
+        );
+
+}
+
+
+.event-date {
+
+    margin-top:
+        40px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        2rem;
+
+    letter-spacing:
+        5px;
+
+    color:
+        var(--wine);
+
+}
+
+
+.event-time {
+
+    margin-top:
+        8px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        0.7rem;
+
+    letter-spacing:
+        4px;
+
+}
+
+
+.event-description {
+
+    margin-bottom:
+        35px;
+
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+
+    min-height:
+        55vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(100,40,30,0.15),
+            transparent 50%
+        ),
+
+        #0d0b09;
+
+}
+
+
+.page-title {
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        clamp(3rem, 8vw, 6rem);
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        12px;
+
+}
+
+
+.page-subtitle {
+
+    margin-top:
+        20px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        0.6rem;
+
+    letter-spacing:
+        5px;
+
+    color:
+        var(--gold);
+
+}
+
+
+/* =========================================================
+   CAST
+========================================================= */
+
+.cast-photo {
+
+    width:
+        100%;
+
+    height:
+        350px;
+
+    object-fit:
+        cover;
+
+    filter:
+        grayscale(20%);
+
+    transition:
+        0.5s;
+
+}
+
+
+.tomb-card:hover .cast-photo {
+
+    transform:
+        scale(1.04);
+
+}
+
+
+.cast-role {
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        0.6rem;
+
+    letter-spacing:
+        4px;
+
+    color:
+        var(--gold);
+
+}
+
+
+.cast-name {
+
+    margin-top:
+        10px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        4px;
+
+}
+
+
+.cast-description {
+
+    margin-top:
+        20px;
+
+    color:
+        var(--ink-light);
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        2;
+
+}
+
+
+.section-dark .cast-description {
+
+    color:
+        rgba(229,219,196,0.6);
+
+}
+
+
+/* =========================================================
+   LORE
+========================================================= */
+
+.lore-box {
+
+    position:
+        relative;
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto 60px;
+
+    padding:
+        50px;
+
+    border:
+        1px solid rgba(74,23,23,0.3);
+
+    background:
+        rgba(229,219,196,0.4);
+
+}
+
+
+.lore-box::before {
+
+    content:
+        "†";
+
+    position:
+        absolute;
+
+    top:
+        -16px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        0 15px;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--wine);
+
+}
+
+
+.lore-title {
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        1.7rem;
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        5px;
+
+    color:
+        var(--wine);
+
+}
+
+
+.lore-text {
+
+    margin-top:
+        25px;
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        2.3;
+
+    color:
+        var(--ink-light);
+
+}
+
+
+/* =========================================================
+   WORLD
+========================================================= */
+
+.world-image-main {
+
+    width:
+        100%;
+
+    max-height:
+        650px;
+
+    object-fit:
+        cover;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    padding:
+        70px 20px;
+
+    text-align:
+        center;
+
+    background:
+        #090807;
+
+    color:
+        var(--paper);
+
+}
+
+
+.footer-logo {
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        1.4rem;
+
+    letter-spacing:
+        8px;
+
+}
+
+
+.footer-text {
+
+    margin-top:
+        15px;
+
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        0.55rem;
+
+    letter-spacing:
+        3px;
+
+    color:
+        rgba(229,219,196,0.4);
+
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes heroAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes scrollLine {
+
+    0% {
+
+        transform:
+            scaleY(0);
+
+        transform-origin:
+            top;
+
+    }
+
+
+    50% {
+
+        transform:
+            scaleY(1);
+
+        transform-origin:
+            top;
+
+    }
+
+
+    51% {
+
+        transform-origin:
+            bottom;
+
+    }
+
+
+    100% {
+
+        transform:
+            scaleY(0);
+
+        transform-origin:
+            bottom;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .tomb-navbar {
+
+        padding:
+            20px;
+
+    }
+
+
+    .nav-container {
+
+        flex-direction:
+            column;
+
+        gap:
+            20px;
+
+    }
+
+
+    .nav-menu {
+
+        gap:
+            18px;
+
+    }
+
+
+    .nav-menu a {
+
+        font-size:
+            0.5rem;
+
+        letter-spacing:
+            2px;
+
+    }
+
+
+    .hero-title {
+
+        font-size:
+            3.5rem;
+
+        letter-spacing:
+            8px;
+
+        margin-right:
+            -8px;
+
+    }
+
+
+    .hero-subtitle {
+
+        letter-spacing:
+            4px;
+
+    }
+
+
+    .section {
+
+        padding:
+            90px 20px;
+
+    }
+
+
+    .card-image {
+
+        height:
+            230px;
+
+    }
+
+
+    .page-header {
+
+        min-height:
+            45vh;
+
+        padding:
+            100px 20px 50px;
+
+    }
+
+
+    .page-title {
+
+        font-size:
+            3rem;
+
+        letter-spacing:
+            7px;
+
+    }
+
+
+    .lore-box {
+
+        padding:
+            35px 25px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .nav-menu {
+
+        gap:
+            12px;
+
+    }
+
+
+    .nav-menu a {
+
+        font-size:
+            0.45rem;
+
+    }
+
+
+    .hero-title {
+
+        font-size:
+            2.8rem;
+
+    }
+
+
+    .hero-small {
+
+        letter-spacing:
+            4px;
+
+    }
+
+
+    .section-title {
+
+        letter-spacing:
+            4px;
+
+    }
+
+}

@@ -1,0 +1,1698 @@
+/* =========================================================
+   TOMBVEIL — WORLD
+   Classical German Archive
+   ========================================================= */
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+.world-header,
+.world-intro,
+.location-section,
+.world-vrchat {
+    position: relative;
+    overflow: hidden;
+}
+
+.world-header {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(90, 82, 68, 0.08),
+            transparent 65%
+        ),
+        #0b0b0a;
+}
+
+.world-header::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 3px,
+            rgba(220, 210, 190, 0.012) 4px
+        );
+
+    pointer-events: none;
+}
+
+.world-header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(185, 172, 145, 0.08);
+
+    border-radius: 50%;
+
+    opacity: 0.7;
+
+    animation: classicalPulse 12s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.world-header-inner {
+    position: relative;
+    z-index: 2;
+
+    padding: 80px 20px 40px;
+
+    text-align: center;
+}
+
+.world-header-label {
+    margin-bottom: 20px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.65rem;
+    letter-spacing: 0.42em;
+
+    color: rgba(205, 195, 178, 0.45);
+
+    animation: fadeUp 1.2s ease both;
+}
+
+
+/* =========================================================
+   WORLD PAGE TITLE
+   ========================================================= */
+
+.world-header .page-title {
+    font-family: "634-hexadevil", serif;
+
+    font-size: clamp(3.5rem, 9vw, 7rem);
+
+    font-weight: normal;
+
+    letter-spacing: 0.18em;
+
+    color: #e3ded3;
+
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(180, 170, 150, 0.05);
+
+    animation: titleReveal 1.5s ease both;
+}
+
+.world-header-line {
+    width: 110px;
+    height: 1px;
+
+    margin: 25px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190, 178, 153, 0.55),
+            transparent
+        );
+
+    animation: lineReveal 1.5s ease 0.3s both;
+}
+
+.world-header-subtitle {
+    margin: 0;
+
+    font-family: "Noto Serif JP", serif;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.16em;
+
+    color: rgba(210, 202, 188, 0.55);
+
+    animation: fadeUp 1.2s ease 0.45s both;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.world-intro {
+    padding: 120px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0b0b0a,
+            #11100e
+        );
+}
+
+.world-main-image {
+    position: relative;
+
+    max-width: 1100px;
+
+    margin: 0 auto 70px;
+
+    overflow: hidden;
+
+    background: #080807;
+
+    border:
+        1px solid
+        rgba(190, 178, 150, 0.18);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65);
+}
+
+
+/* old photograph frame */
+
+.world-main-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    border:
+        1px solid
+        rgba(220, 210, 190, 0.12);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.world-main-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 20px;
+
+    border:
+        1px solid
+        rgba(110, 104, 92, 0.18);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.world-main-image img {
+    display: block;
+
+    width: 100%;
+    height: min(60vh, 600px);
+
+    object-fit: cover;
+
+    filter:
+        grayscale(0.3)
+        sepia(0.18)
+        brightness(0.72)
+        contrast(1.08);
+
+    opacity: 0.78;
+
+    transition:
+        transform 1.4s ease,
+        filter 1.2s ease;
+}
+
+.world-main-image:hover img {
+    transform: scale(1.025);
+
+    filter:
+        grayscale(0.15)
+        sepia(0.15)
+        brightness(0.78)
+        contrast(1.08);
+}
+
+.world-main-overlay {
+    position: absolute;
+
+    left: 45px;
+    bottom: 40px;
+
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.world-main-overlay span {
+    font-family: "Cinzel", serif;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.35em;
+
+    color: rgba(220, 210, 190, 0.5);
+
+    margin-bottom: 8px;
+}
+
+.world-main-overlay strong {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(1.5rem, 3vw, 2.7rem);
+
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+
+    color: #e4ded2;
+
+    text-shadow:
+        0 3px 15px #000;
+}
+
+
+/* intro text */
+
+.world-intro-text {
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.world-section-label {
+    margin-bottom: 14px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.4em;
+
+    color: rgba(186, 174, 150, 0.55);
+}
+
+.world-intro-text h2,
+.location-heading h2,
+.world-vrchat h2 {
+    margin-bottom: 25px;
+
+    font-family: "Cinzel", serif;
+
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+
+    color: #ddd7cb;
+}
+
+.world-title-line {
+    width: 75px;
+    height: 1px;
+
+    margin: 25px auto 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185, 173, 148, 0.55),
+            transparent
+        );
+}
+
+.world-intro-text p:not(.world-section-label) {
+    color: rgba(210, 202, 190, 0.6);
+
+    font-size: 0.88rem;
+
+    line-height: 2.15;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.location-section {
+    padding: 130px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #11100e,
+            #0b0b0a
+        );
+}
+
+.location-heading {
+    margin-bottom: 65px;
+
+    text-align: center;
+}
+
+.location-heading > p:last-of-type {
+    margin-top: -5px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.32em;
+
+    color: rgba(205, 195, 175, 0.28);
+}
+
+.location-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LOCATION CARD
+   ========================================================= */
+
+.location-card {
+    position: relative;
+
+    min-height: 390px;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background: #0b0b0a;
+
+    border:
+        1px solid
+        rgba(190, 178, 153, 0.13);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+
+    transition:
+        transform 0.6s cubic-bezier(.2,.7,.2,1),
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(205, 195, 170, 0.28);
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.65);
+}
+
+.location-card:nth-child(3) {
+    grid-column: span 2;
+}
+
+.location-card:nth-child(3) .location-image {
+    height: 500px;
+}
+
+
+/* photograph */
+
+.location-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.55;
+
+    filter:
+        grayscale(0.45)
+        sepia(0.18)
+        brightness(0.6)
+        contrast(1.08);
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.7,.2,1),
+        filter 0.8s ease,
+        opacity 0.8s ease;
+}
+
+.location-card:hover .location-image {
+    transform: scale(1.045);
+
+    opacity: 0.68;
+
+    filter:
+        grayscale(0.25)
+        sepia(0.14)
+        brightness(0.68)
+        contrast(1.08);
+}
+
+
+/* photograph darkness */
+
+.location-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.05),
+            rgba(0,0,0,0.3) 40%,
+            rgba(0,0,0,0.94) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* subtle aged light */
+
+.location-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(220, 210, 190, 0.04),
+            transparent 55%
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LOCATION CONTENT
+   ========================================================= */
+
+.location-trigger {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    border: 0;
+
+    background: transparent;
+
+    text-align: left;
+
+    color: inherit;
+
+    cursor: pointer;
+}
+
+.location-number {
+    position: absolute;
+
+    top: 27px;
+    left: 30px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.22em;
+
+    color: rgba(220, 210, 190, 0.45);
+
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.location-card:hover .location-number {
+    color: rgba(220, 210, 190, 0.7);
+
+    transform: translateX(3px);
+}
+
+.location-card .location-placeholder {
+    position: relative;
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.28em;
+
+    color: rgba(215, 205, 190, 0.4);
+
+    z-index: 2;
+}
+
+.location-card h3 {
+    position: relative;
+
+    margin: 0 0 8px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+
+    color: #e4ded3;
+
+    z-index: 2;
+
+    transition:
+        transform 0.5s ease,
+        letter-spacing 0.5s ease;
+}
+
+.location-card:hover h3 {
+    transform: translateX(4px);
+
+    letter-spacing: 0.15em;
+}
+
+.location-card p {
+    position: relative;
+
+    margin: 0;
+
+    color: rgba(215, 207, 195, 0.55);
+
+    font-size: 0.76rem;
+
+    letter-spacing: 0.06em;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   OPEN ARCHIVE
+   ========================================================= */
+
+.location-open {
+    position: absolute;
+
+    right: 32px;
+    bottom: 36px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.53rem;
+
+    letter-spacing: 0.25em;
+
+    color: rgba(220, 210, 195, 0.42);
+
+    z-index: 3;
+
+    transition:
+        color 0.4s ease,
+        gap 0.4s ease;
+}
+
+.location-open::after {
+    content: "→";
+
+    font-family: serif;
+
+    font-size: 0.9rem;
+
+    color: rgba(210, 200, 180, 0.55);
+
+    transition:
+        transform 0.4s ease;
+}
+
+.location-card:hover .location-open {
+    color: rgba(235, 228, 215, 0.85);
+
+    gap: 17px;
+}
+
+.location-card:hover .location-open::after {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   ARCHIVE MODAL
+   ========================================================= */
+
+body.archive-open {
+    overflow: hidden;
+}
+
+.world-archive {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+.world-archive.is-visible {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   BACKDROP
+   ========================================================= */
+
+.archive-backdrop {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(60, 57, 50, 0.12),
+            rgba(0, 0, 0, 0.94) 70%
+        );
+
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.7s ease;
+}
+
+.world-archive.is-visible .archive-backdrop {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ARCHIVE WINDOW
+   ========================================================= */
+
+.archive-window {
+    position: relative;
+
+    width: min(1180px, 94vw);
+
+    max-height: 90vh;
+
+    overflow: auto;
+
+    padding: 70px 70px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #181713,
+            #0d0d0b
+        );
+
+    border:
+        1px solid
+        rgba(205, 195, 175, 0.2);
+
+    box-shadow:
+        0 45px 120px rgba(0,0,0,0.9),
+        inset 0 0 0 1px
+        rgba(255,255,255,0.025);
+
+    transform:
+        translateY(35px)
+        scale(0.97);
+
+    opacity: 0;
+
+    transition:
+        transform 0.7s cubic-bezier(.2,.8,.2,1),
+        opacity 0.5s ease;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(185, 175, 155, 0.35)
+        transparent;
+}
+
+.world-archive.is-visible .archive-window {
+    transform:
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+}
+
+
+/* paper grain */
+
+.archive-window::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.4;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 4px,
+            rgba(255,255,255,0.008) 5px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 6px,
+            rgba(255,255,255,0.006) 7px
+        );
+}
+
+
+/* inner frame */
+
+.archive-window::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border:
+        1px solid
+        rgba(205, 195, 175, 0.09);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ARCHIVE INDEX
+   ========================================================= */
+
+.archive-index {
+    position: absolute;
+
+    top: 28px;
+    left: 35px;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 12px;
+
+    z-index: 3;
+}
+
+.archive-index span {
+    font-family: "Cinzel", serif;
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.28em;
+
+    color: rgba(210, 200, 185, 0.35);
+}
+
+.archive-index strong {
+    font-family: "Cinzel", serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 400;
+
+    color: rgba(220, 210, 190, 0.7);
+}
+
+
+/* =========================================================
+   CLOSE
+   ========================================================= */
+
+.archive-close {
+    position: absolute;
+
+    top: 22px;
+    right: 30px;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 5px 8px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: rgba(220, 210, 195, 0.38);
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease;
+}
+
+.archive-close span {
+    font-family: "Cinzel", serif;
+
+    font-size: 0.5rem;
+
+    letter-spacing: 0.22em;
+}
+
+.archive-close strong {
+    font-family: serif;
+
+    font-size: 1.45rem;
+
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+.archive-close:hover {
+    color: #eee8dc;
+}
+
+
+/* =========================================================
+   ARCHIVE HEADING
+   ========================================================= */
+
+.archive-heading {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 55px;
+
+    text-align: center;
+}
+
+.archive-heading p {
+    margin: 0 0 10px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.42em;
+
+    color: rgba(205, 195, 175, 0.45);
+}
+
+.archive-heading h2 {
+    margin: 0;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(2.3rem, 5vw, 4rem);
+
+    font-weight: 400;
+
+    letter-spacing: 0.13em;
+
+    color: #e3ddd1;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,0.6);
+}
+
+.archive-rule {
+    width: 100px;
+    height: 1px;
+
+    margin: 22px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(195, 184, 158, 0.5),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   ARCHIVE CONTENT
+   ========================================================= */
+
+.archive-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(350px, 1.05fr)
+        minmax(300px, 0.95fr);
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   ARCHIVE IMAGE
+   ========================================================= */
+
+.archive-image-wrap {
+    min-width: 0;
+}
+
+.archive-image-frame {
+    position: relative;
+
+    padding: 12px;
+
+    background:
+        #080807;
+
+    border:
+        1px solid
+        rgba(205, 195, 175, 0.2);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.7);
+
+    overflow: hidden;
+}
+
+.archive-image-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border:
+        1px solid
+        rgba(215, 205, 185, 0.08);
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+/* scanning light */
+
+.archive-image-frame::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 50%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(235, 225, 205, 0.06),
+            transparent
+        );
+
+    transform: skewX(-18deg);
+
+    pointer-events: none;
+
+    z-index: 4;
+}
+
+.world-archive.is-visible
+.archive-image-frame::after {
+    animation:
+        oldPhotoScan
+        1.6s ease
+        0.3s
+        forwards;
+}
+
+.archive-image-frame img {
+    display: block;
+
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transform: scale(1.04);
+
+    filter:
+        grayscale(0.4)
+        sepia(0.2)
+        brightness(0.7)
+        contrast(1.08);
+
+    transition:
+        opacity 0.8s ease,
+        transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+
+.world-archive.is-visible
+.archive-image-frame img {
+    opacity: 0.88;
+
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   PHOTO CORNERS
+   ========================================================= */
+
+.archive-image-corner {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.corner-tl {
+    top: 5px;
+    left: 5px;
+
+    border-top:
+        1px solid
+        rgba(210, 200, 180, 0.55);
+
+    border-left:
+        1px solid
+        rgba(210, 200, 180, 0.55);
+}
+
+.corner-tr {
+    top: 5px;
+    right: 5px;
+
+    border-top:
+        1px solid
+        rgba(210, 200, 180, 0.55);
+
+    border-right:
+        1px solid
+        rgba(210, 200, 180, 0.55);
+}
+
+.corner-bl {
+    bottom: 5px;
+    left: 5px;
+
+    border-bottom:
+        1px solid
+        rgba(210, 200, 180, 0.55);
+
+    border-left:
+        1px solid
+        rgba(210, 200, 180, 0.55);
+}
+
+.corner-br {
+    bottom: 5px;
+    right: 5px;
+
+    border-bottom:
+        1px solid
+        rgba(210, 200, 180, 0.55);
+
+    border-right:
+        1px solid
+        rgba(210, 200, 180, 0.55);
+}
+
+.archive-image-caption {
+    margin: 15px 0 0;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.5rem;
+
+    letter-spacing: 0.28em;
+
+    color: rgba(210, 200, 180, 0.3);
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   ARCHIVE TEXT
+   ========================================================= */
+
+.archive-text {
+    opacity: 0;
+
+    transform: translateX(25px);
+}
+
+.world-archive.is-visible .archive-text {
+    animation:
+        archiveTextReveal
+        0.8s ease
+        0.25s
+        forwards;
+}
+
+.archive-label {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.35em;
+
+    color: rgba(210, 200, 180, 0.45);
+}
+
+.archive-text h3 {
+    margin-bottom: 25px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 1.4rem;
+
+    font-weight: 400;
+
+    letter-spacing: 0.1em;
+
+    color: #e3ddd1;
+}
+
+.archive-text > p {
+    margin: 0;
+
+    color: rgba(215, 207, 195, 0.62);
+
+    font-size: 0.86rem;
+
+    line-height: 2.2;
+
+    letter-spacing: 0.055em;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.archive-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 35px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(190, 180, 160, 0.35),
+            rgba(190, 180, 160, 0.08),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   META
+   ========================================================= */
+
+.archive-meta {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.archive-meta div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.archive-meta span {
+    font-family: "Cinzel", serif;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.25em;
+
+    color: rgba(210, 200, 180, 0.28);
+}
+
+.archive-meta strong {
+    font-family: "Cinzel", serif;
+
+    font-size: 0.62rem;
+
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(220, 210, 195, 0.65);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.archive-footer {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 55px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid
+        rgba(205, 195, 175, 0.08);
+
+    font-family: "Cinzel", serif;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.25em;
+
+    color: rgba(210, 200, 180, 0.25);
+}
+
+
+/* =========================================================
+   VISIT WORLD
+   ========================================================= */
+
+.world-vrchat {
+    padding: 130px 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(150, 140, 120, 0.05),
+            transparent 60%
+        ),
+        #0a0a09;
+
+    border-top:
+        1px solid
+        rgba(205, 195, 175, 0.06);
+}
+
+.world-vrchat > .container > p:not(.world-section-label) {
+    color: rgba(215, 205, 190, 0.45);
+
+    margin-bottom: 30px;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.96);
+
+        letter-spacing: 0.28em;
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        letter-spacing: 0.18em;
+    }
+}
+
+@keyframes lineReveal {
+    from {
+        width: 0;
+
+        opacity: 0;
+    }
+
+    to {
+        width: 110px;
+
+        opacity: 1;
+    }
+}
+
+@keyframes classicalPulse {
+    0%,
+    100% {
+        transform: scale(1);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.05);
+
+        opacity: 0.8;
+    }
+}
+
+@keyframes oldPhotoScan {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 160%;
+    }
+}
+
+@keyframes archiveTextReveal {
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .location-card:nth-child(3) {
+        grid-column: span 1;
+    }
+
+    .location-card:nth-child(3)
+    .location-image {
+        height: 100%;
+    }
+
+    .archive-window {
+        padding:
+            65px
+            35px
+            25px;
+    }
+
+    .archive-content {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .archive-image-frame img {
+        height: min(55vh, 420px);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .world-header {
+        min-height: 45vh;
+    }
+
+    .world-header-inner {
+        padding-top: 90px;
+    }
+
+    .world-header-label {
+        font-size: 0.52rem;
+
+        letter-spacing: 0.28em;
+    }
+
+    .world-header .page-title {
+        font-size: 3rem;
+
+        letter-spacing: 0.12em;
+    }
+
+    .world-intro,
+    .location-section,
+    .world-vrchat {
+        padding: 80px 0;
+    }
+
+    .world-main-image {
+        margin-bottom: 45px;
+    }
+
+    .world-main-image img {
+        height: 350px;
+    }
+
+    .world-main-overlay {
+        left: 25px;
+        bottom: 25px;
+    }
+
+    .location-grid {
+        gap: 18px;
+    }
+
+    .location-card {
+        min-height: 330px;
+    }
+
+    .location-trigger {
+        padding: 25px;
+    }
+
+    .location-open {
+        right: 25px;
+        bottom: 27px;
+    }
+
+    .world-archive {
+        padding: 10px;
+    }
+
+    .archive-window {
+        width: 100%;
+
+        max-height: 94vh;
+
+        padding:
+            65px
+            22px
+            22px;
+    }
+
+    .archive-window::after {
+        inset: 9px;
+    }
+
+    .archive-index {
+        top: 22px;
+        left: 24px;
+    }
+
+    .archive-close {
+        top: 18px;
+        right: 20px;
+    }
+
+    .archive-heading {
+        margin-bottom: 30px;
+    }
+
+    .archive-heading h2 {
+        font-size: 2rem;
+    }
+
+    .archive-content {
+        gap: 30px;
+    }
+
+    .archive-image-frame {
+        padding: 8px;
+    }
+
+    .archive-image-frame img {
+        height: 280px;
+    }
+
+    .archive-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .archive-text > p {
+        font-size: 0.8rem;
+
+        line-height: 2;
+    }
+
+    .archive-meta {
+        gap: 15px;
+    }
+
+    .archive-footer {
+        font-size: 0.4rem;
+
+        letter-spacing: 0.15em;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}

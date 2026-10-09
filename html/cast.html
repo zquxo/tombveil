@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cast | TOMBVEIL</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    >
+
+
+    <!-- TOMBVEIL共通CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- CAST専用CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/cast.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <nav class="tomb-navbar">
+
+        <div class="container nav-container">
+
+            <a
+                href="../index.html"
+                class="tomb-logo"
+            >
+                TOMBVEIL
+            </a>
+
+
+            <ul class="nav-menu">
+
+                <li>
+                    <a href="../index.html">
+                        HOME
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cast.html">
+                        CAST
+                    </a>
+                </li>
+
+                <li>
+                    <a href="world.html">
+                        WORLD
+                    </a>
+                </li>
+
+                <li>
+                    <a href="lore.html">
+                        LORE
+                    </a>
+                </li>
+
+                <li>
+                    <a href="event.html">
+                        EVENT
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         PAGE HEADER
+    ===================================================== -->
+
+    <header class="page-header">
+
+        <div class="container">
+
+            <p class="page-subtitle">
+                THE PEOPLE BEHIND THE VEIL
+            </p>
+
+            <h1 class="page-title">
+                MAID BUTLER
+            </h1>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CAST
+    ===================================================== -->
+
+    <main>
+
+        <section class="section section-dark">
+
+            <div class="container">
+
+
+                <!-- =================================================
+                     CAST FILTER
+                ================================================= -->
+
+               <div class="cast-filter">
+
+    <div class="cast-filter-label">
+        <span>ARCHIVE</span>
+        <small>PERSONNEL INDEX</small>
+    </div>
+
+    <div class="cast-filter-buttons">
+
+        <button
+            class="cast-filter-button active"
+            data-filter="all"
+            onclick="filterCast('all', this)"
+        >
+            ALL
+        </button>
+
+        <button
+            class="cast-filter-button"
+            data-filter="maid"
+            onclick="filterCast('maid', this)"
+        >
+            MAID
+        </button>
+
+        <button
+            class="cast-filter-button"
+            data-filter="butler"
+            onclick="filterCast('butler', this)"
+        >
+            BUTLER
+        </button>
+
+    </div>
+
+</div>
+
+                <!-- =================================================
+                     CAST BOOK GRID
+                ================================================= -->
+
+                <div class="cast-book-grid">
+
+
+                    <!-- =================================================
+                         CAST 01
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(0)"
+                    >
+
+                        <img
+                            src="images/cast/cast01.png"
+                            class="book-card-image"
+                            alt="CAST 01"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                メイド長
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Muclith
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 02
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="butler"
+                        onclick="openBook(1)"
+                    >
+
+                        <img
+                            src="images/cast/cast02.png"
+                            class="book-card-image"
+                            alt="CAST 02"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                執事・設備メンテナンス
+                            </span>
+
+                            <h2 class="book-card-name">
+                                埜守
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 03
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(2)"
+                    >
+
+                        <img
+                            src="images/cast/cast03.png"
+                            class="book-card-image"
+                            alt="CAST 03"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                墓の番人
+                            </span>
+
+                            <h2 class="book-card-name">
+                                ニャポストル・ナイトメア
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 04
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="butler"
+                        onclick="openBook(3)"
+                    >
+
+                        <img
+                            src="images/cast/cast04.png"
+                            class="book-card-image"
+                            alt="CAST 04"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                執事・雑務
+                            </span>
+
+                            <h2 class="book-card-name">
+                                蠎
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 05
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="butler"
+                        onclick="openBook(4)"
+                    >
+
+                        <img
+                            src="images/cast/cast05.png"
+                            class="book-card-image"
+                            alt="CAST 05"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                執事・悪魔祓い
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Kolton Pierce
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 06
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(5)"
+                    >
+
+                        <img
+                            src="images/cast/cast06.png"
+                            class="book-card-image"
+                            alt="CAST 06"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                記憶守
+                            </span>
+
+                            <h2 class="book-card-name">
+                                こいし
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 07
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(6)"
+                    >
+
+                        <img
+                            src="images/cast/cast07.png"
+                            class="book-card-image"
+                            alt="CAST 07"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                一般メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                翠
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 08
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(7)"
+                    >
+
+                        <img
+                            src="images/cast/cast08.png"
+                            class="book-card-image"
+                            alt="CAST 08"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                庭師メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                とと
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 09
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="butler"
+                        onclick="openBook(8)"
+                    >
+
+                        <img
+                            src="images/cast/cast09.png"
+                            class="book-card-image"
+                            alt="CAST 09"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                執事・雑務
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Rayleigh
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 10
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(9)"
+                    >
+
+                        <img
+                            src="images/cast/cast10.png"
+                            class="book-card-image"
+                            alt="CAST 10"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                墓堀りメイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                幽灯
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 11
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(10)"
+                    >
+
+                        <img
+                            src="images/cast/cast11.png"
+                            class="book-card-image"
+                            alt="CAST 11"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                役職なし
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Aster
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 12
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(11)"
+                    >
+
+                        <img
+                            src="images/cast/cast12.png"
+                            class="book-card-image"
+                            alt="CAST 12"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                お掃除メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Michelle
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 13
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(12)"
+                    >
+
+                        <img
+                            src="images/cast/cast13.png"
+                            class="book-card-image"
+                            alt="CAST 13"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                墓守メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                ニーア
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 14
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(13)"
+                    >
+
+                        <img
+                            src="images/cast/cast14.png"
+                            class="book-card-image"
+                            alt="CAST 14"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                迷子案内
+                            </span>
+
+                            <h2 class="book-card-name">
+                                メア
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 15
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(14)"
+                    >
+
+                        <img
+                            src="images/cast/cast15.png"
+                            class="book-card-image"
+                            alt="CAST 15"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                墓守メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                リリィベル
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 16
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(15)"
+                    >
+
+                        <img
+                            src="images/cast/cast16.png"
+                            class="book-card-image"
+                            alt="CAST 16"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                屋敷の見回り
+                            </span>
+
+                            <h2 class="book-card-name">
+                                フォイル
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 17
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(16)"
+                    >
+
+                        <img
+                            src="images/cast/cast17.png"
+                            class="book-card-image"
+                            alt="CAST 17"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                お料理メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Noah
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 18
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(17)"
+                    >
+
+                        <img
+                            src="images/cast/cast18.png"
+                            class="book-card-image"
+                            alt="CAST 18"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                墓守メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                黒棺 ねる
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 19
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(18)"
+                    >
+
+                        <img
+                            src="images/cast/cast19.png"
+                            class="book-card-image"
+                            alt="CAST 19"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                墓守メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                フロル
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 20
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(19)"
+                    >
+
+                        <img
+                            src="images/cast/cast20.png"
+                            class="book-card-image"
+                            alt="CAST 20"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                庭師メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                グラス
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 21
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(20)"
+                    >
+
+                        <img
+                            src="images/cast/cast21.png"
+                            class="book-card-image"
+                            alt="CAST 21"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                家事妖精
+                            </span>
+
+                            <h2 class="book-card-name">
+                                サーシャ
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 22
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="butler"
+                        onclick="openBook(21)"
+                    >
+
+                        <img
+                            src="images/cast/cast22.png"
+                            class="book-card-image"
+                            alt="CAST 22"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                執事・書庫管理人
+                            </span>
+
+                            <h2 class="book-card-name">
+                                No.098
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 23
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(22)"
+                    >
+
+                        <img
+                            src="images/cast/cast23.png"
+                            class="book-card-image"
+                            alt="CAST 23"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                メイド見習い
+                            </span>
+
+                            <h2 class="book-card-name">
+                                mono
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 24
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(23)"
+                    >
+
+                        <img
+                            src="images/cast/cast24.png"
+                            class="book-card-image"
+                            alt="CAST 24"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                薬師メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                alma
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 25
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="butler"
+                        onclick="openBook(24)"
+                    >
+
+                        <img
+                            src="images/cast/cast25.png"
+                            class="book-card-image"
+                            alt="CAST 25"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                執事・雑務
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Jowd
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 26
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(25)"
+                    >
+
+                        <img
+                            src="images/cast/cast26.png"
+                            class="book-card-image"
+                            alt="CAST 26"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                墓守メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Emma
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 27
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(26)"
+                    >
+
+                        <img
+                            src="images/cast/cast27.png"
+                            class="book-card-image"
+                            alt="CAST 27"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                警備人形メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Null
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 28
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(27)"
+                    >
+
+                        <img
+                            src="images/cast/cast28.png"
+                            class="book-card-image"
+                            alt="CAST 28"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                家事メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                Chermy
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 29
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(28)"
+                    >
+
+                        <img
+                            src="images/cast/cast29.png"
+                            class="book-card-image"
+                            alt="CAST 29"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                猟犬メイド
+                            </span>
+
+                            <h2 class="book-card-name">
+                                ティンダロスちゃん
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 30
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(29)"
+                    >
+
+                        <img
+                            src="images/cast/cast30.png"
+                            class="book-card-image"
+                            alt="CAST 30"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                非公開情報
+                            </span>
+
+                            <h2 class="book-card-name">
+                                非公開情報
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 31
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(30)"
+                    >
+
+                        <img
+                            src="images/cast/cast31.png"
+                            class="book-card-image"
+                            alt="CAST 31"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                非公開情報
+                            </span>
+
+                            <h2 class="book-card-name">
+                                非公開情報
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         CAST 32
+                    ================================================= -->
+
+                    <article
+                        class="book-card"
+                        data-type="maid"
+                        onclick="openBook(31)"
+                    >
+
+                        <img
+                            src="images/cast/cast32.png"
+                            class="book-card-image"
+                            alt="CAST 32"
+                        >
+
+                        <div class="book-card-content">
+
+                            <span class="book-card-number">
+                                非公開情報
+                            </span>
+
+                            <h2 class="book-card-name">
+                                非公開情報
+                            </h2>
+
+                            <span class="book-card-open">
+                                OPEN RECORD
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         BOOK OVERLAY
+    ===================================================== -->
+
+    <div
+        class="book-overlay"
+        id="bookOverlay"
+        onclick="overlayClick(event)"
+    >
+
+        <div class="book">
+
+
+            <button
+                class="book-close"
+                onclick="closeBook()"
+            >
+                CLOSE BOOK ×
+            </button>
+
+
+            <div class="book-inner">
+
+
+                <!-- LEFT PAGE -->
+
+                <div class="book-page left">
+
+                    <div class="book-photo-frame">
+
+                        <img
+                            id="bookPhoto"
+                            class="book-photo"
+                            src=""
+                            alt=""
+                        >
+
+                        <span
+                            class="photo-label"
+                            id="photoLabel"
+                        >
+                            ARCHIVE IMAGE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT PAGE -->
+
+                <div class="book-page right">
+
+                    <span
+                        class="book-number"
+                        id="bookNumber"
+                    >
+                        01
+                    </span>
+
+
+                    <p class="book-small-title">
+                        TOMBVEIL / ARCHIVE
+                    </p>
+
+
+                    <h2
+                        class="book-name"
+                        id="bookName"
+                    >
+                        CAST NAME
+                    </h2>
+
+
+                    <p
+                        class="book-role"
+                        id="bookRole"
+                    >
+                        CAST
+                    </p>
+
+
+                    <div class="book-divider"></div>
+
+
+                    <h3 class="book-profile-title">
+                        PROFILE
+                    </h3>
+
+
+                    <p
+                        class="book-profile"
+                        id="bookProfile"
+                    >
+                        Character profile.
+                    </p>
+
+
+                    <div class="book-footer">
+
+                        <span
+                            class="book-page-number"
+                            id="bookPageNumber"
+                        >
+                            PAGE 01
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOK NAVIGATION -->
+
+            <div class="book-navigation">
+
+                <button
+                    class="book-nav-button"
+                    onclick="previousBook()"
+                >
+                    ← PREV
+                </button>
+
+
+                <button
+                    class="book-nav-button"
+                    onclick="nextBook()"
+                >
+                    NEXT →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-logo">
+                TOMBVEIL
+            </div>
+
+            <p class="footer-text">
+                VRCHAT EVENT
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           NAVBAR SCROLL
+        ================================================= */
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                const navbar =
+                    document.querySelector(
+                        ".tomb-navbar"
+                    );
+
+
+                if (window.scrollY > 40) {
+
+                    navbar.classList.add(
+                        "scrolled"
+                    );
+
+                } else {
+
+                    navbar.classList.remove(
+                        "scrolled"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           CAST DATA
+        ================================================= */
+
+        const castData = [
+
+
+            /* CAST 01 */
+
+            {
+                image: "images/cast/cast01.png",
+                name: "Muclith",
+                role: "head maid",
+                type: "maid",
+                profile: "仄かな微笑みを浮かべ、屋敷の時を静かに見つめるメイド長。物静かであまり言葉を発しないせいか怖がられることもあるが、本当はただの人見知り。胸元のブローチを彼女は人一倍大事に想っている。"
+            },
+
+
+            /* CAST 02 */
+
+            {
+                image: "images/cast/cast02.png",
+                name: "埜守",
+                role: "執事・設備メンテナンス",
+                type: "butler",
+                profile: "感情の起伏が乏しく、「機械のよう」と評されるが、一緒に働くうちに「静かに気遣ってくれるタイプ」とわかる。プライベートを語らず、 同僚の間でも過去は謎のまま。壊れた備品の修理などの設備メンテナンスを担当している言葉は少ないが、周囲の変化には誰よりも敏く、必要とあらば黙って動く。派手さはないが、屋敷の秩序を裏から支える無骨な実務者。。"
+            },
+
+
+            /* CAST 03 */
+
+            {
+                image: "images/cast/cast03.png",
+                name: "ニャポストル・ナイトメア",
+                role: "墓の番人",
+                type: "maid",
+                profile: "ぶっきらぼうな口調と素っ気ない態度が目立つが、本当は誰かと過ごす時間が何よりも嬉しい。それを素直に言えないだけの、不器用な甘えん坊。"
+            },
+
+
+            /* CAST 04 */
+
+            {
+                image: "images/cast/cast04.png",
+                name: "蟒",
+                role: "執事・雑務",
+                type: "butler",
+                profile: "屋敷には住んでおらず、53年通勤。屋敷から徒歩22分の家に住んでおり、今は庭師の研修中である"
+            },
+
+
+            /* CAST 05 */
+
+            {
+                image: "images/cast/cast05.png",
+                name: "Kolton Pierce",
+                role: "執事・悪魔祓い",
+                type: "butler",
+                profile: "元聖職者の見習いで所属していた教会に馴染めず、悩んでいたところメイド長に拾われた。そのためメイド長には恩義を感じている。軽い悪魔祓いが可能で、墓地に寄りつく低級の悪霊なら祓うことができる。それも仕事の一つである。"
+            },
+
+
+            /* CAST 06 */
+
+            {
+                image: "images/cast/cast06.png",
+                name: "こいし",
+                role: "記憶守",
+                type: "maid",
+                profile: "墓石を彫り、管理し、その存在が消えぬよう静かに守り続けている。ドライで感情表現が苦手。屋敷の隅で墓石を彫っている時が一番落ち着くが、人と話すのは嫌いじゃない。精密な彫刻と、石を担ぐ腕を併せ持つ、寡黙な力持ち"
+            },
+
+
+            /* CAST 07 */
+
+            {
+                image: "images/cast/cast07.png",
+                name: "翠",
+                role: "一般メイド",
+                type: "maid",
+                profile: "おしゃべりさんだけど、口下手なので自分の気持ちをはっきりに相手に伝えるのが苦手。メイド長のことが大好きなので隙があればメイド長語りをする。長い髪が翠の顔を覆っているので、表情は読み取りずらく、翠自身も表情はあまり豊かではない。表情が豊かではない代わりに仕草で伝える。"
+            },
+
+
+            /* CAST 08 */
+
+            {
+                image: "images/cast/cast08.png",
+                name: "とと",
+                role: "庭師メイド",
+                type: "maid",
+                profile: "記憶が曖昧のまま森の中を彷徨っていた所を青い蝶が己を屋敷へと導いた。蝶はブリキの飾りへと姿を変え彼の肩で眠る。花々や緑がなんとなく好きだ、そんな薄い記憶からか庭師として鋏を振るっている。不満事があると無言で大鋏をちょきちょきと扱うせいで首を刈られると噂されることも。"
+            },
+
+
+            /* CAST 09 */
+
+            {
+                image: "images/cast/cast09.png",
+                name: "Rayleigh",
+                role: "執事・雑務",
+                type: "butler",
+                profile: "無理に仲間になろうとはせず、あくまで「仕事としての関わり」を優先、ただし、忘れられているものや取り残されたものに妙な優しさを見せることがある。臨時補佐係として調理、接客、清掃、記録補助、簡単な墓地案内など手が足りないところに入る「なんでも屋」的存在。執事の中では若く、末っ子的立ち位置。本人はそれを利用してうまく力を抜くこともある"
+            },
+
+
+            /* CAST 10 */
+
+            {
+                image: "images/cast/cast10.png",
+                name: "幽灯",
+                role: "墓堀りメイド",
+                type: "maid",
+                profile: "いつか誰かに言いつけられてからずっと墓掘り人（はかほりにん）として働いているメイド。毎日死者としか目を合わせていないため、生きている人間に会えると嬉しくて話しかけてしまう。陰鬱な見た目に反し贈り物をすることが好きで、お供え用の花を会った人にプレゼントしてくることもしばしば……。誰になんて言われたのかすっかり忘れてしまったけれど、死者に永遠の安息をお届けするために今日も幽灯は穴を掘る。"
+            },
+
+
+            /* CAST 11 */
+
+            {
+                image: "images/cast/cast11.png",
+                name: "Aster",
+                role: "役職なし",
+                type: "maid",
+                profile: "屋敷に来る前は病院で暮らしていた。廃院となってしまった時、ぬいぐるみと共に屋敷へ来た。その時入院中の子どもと一緒に聞いたおとぎ話の王子様に憧れがあり、いつか会いにきてもらうためレディの姿になっている。"
+            },
+
+
+            /* CAST 12 */
+
+            {
+                image: "images/cast/cast12.png",
+                name: "Michelle",
+                role: "お掃除メイド",
+                type: "maid",
+                profile: "ある日気づくと屋敷の庭におり行く当てもないのでお掃除メイドとして拾っていただいた。が、掃除をする度に何かを壊している。他の「お掃除」なら得意らしいが･･･？「まあ、生きていれば大抵のことはなんとかなりますからね～!」と呑気なことを言っているが生きているのか死んでいるのか定かではない。"
+            },
+
+
+            /* CAST 13 */
+
+            {
+                image: "images/cast/cast13.png",
+                name: "ニーア",
+                role: "墓守メイド",
+                type: "maid",
+                profile: "記憶を失い、彷徨っていたところをメイド長に拾われ、屋敷で働き始める。ぬいぐるみを持っている時だけは心から安心し、微笑みを浮かべる。背中の大鎌は悪霊を狩るために作られたが、使う機会は少ない。"
+            },
+
+
+            /* CAST 14 */
+
+            {
+                image: "images/cast/cast14.png",
+                name: "メア",
+                role: "迷子案内",
+                type: "maid",
+                profile: "屋敷に迷い込んでしまった幽霊が悪霊にならないように帰り道を教えてあげている。悪霊を見つけるとこぴやユニアに教える。人間からは見えないものと話していることがある。"
+            },
+
+
+            /* CAST 15 */
+
+            {
+                image: "images/cast/cast15.png",
+                name: "リリィベル",
+                role: "墓守メイド",
+                type: "maid",
+                profile: "人生を物語と称し、墓に眠る「人生を完成させた人々」を大切に想い、守っているメイド。自らを語るよりもメイド仲間や屋敷に訪れた人々のお話や経験を聞くことが好きで、仕事の合間に聞かせてもらった「物語」を書き留めている。世話焼きな性質。紅茶を淹れるのが得意らしい。"
+            },
+
+
+            /* CAST 16 */
+
+            {
+                image: "images/cast/cast16.png",
+                name: "フォイル",
+                role: "屋敷の見回り",
+                type: "maid",
+                profile: "お姉さんっぽい口調。基本的にお話を聞くのが好き。メイド長は勿論、他のメイド達にも敬意をもって接しており忠誠心が強い。現在は落ち着いた雰囲気だがお屋敷で働き始めたころは荒れていたらしい。"
+            },
+
+
+            /* CAST 17 */
+
+            {
+                image: "images/cast/cast17.png",
+                name: "Noah",
+                role: "お料理メイド",
+                type: "maid",
+                profile: "食いしんぼうで好奇心旺盛すぐおなかがすいてしまうので何か食べてる事が多い。間延びした様な話し方をするため幼く見られる事が多い"
+            },
+
+
+            /* CAST 18 */
+
+            {
+                image: "images/cast/cast18.png",
+                name: "黒棺ねる",
+                role: "墓守メイド",
+                type: "maid",
+                profile: "幼い頃自分を拾ってくれた主人の墓を守り続けている。番人としての気質を認められながらも普段はメイドとして穏やかに給仕する日々を送っているが、どこからともなく囁かれる噂がある。主人の墓に足を踏み入れた者は、二度とこの屋敷から出ることはないのだと。"
+            },
+
+
+            /* CAST 19 */
+
+            {
+                image: "images/cast/cast19.png",
+                name: "フロル",
+                role: "墓守メイド",
+                type: "maid",
+                profile: "なぜだか離れ難いお墓があり、傍から離れなかった所をメイドとして屋敷に保護された。姉がおり、お姉様と呼び慕っている。墓石を飾り付けるのが好き。"
+            },
+
+
+            /* CAST 20 */
+
+            {
+                image: "images/cast/cast20.png",
+                name: "グラス",
+                role: "墓守メイド",
+                type: "maid",
+                profile: "かつて静かな森で暮らしていた姉妹鹿の姉。記憶が曖昧な為どうして人の姿をとれたのか覚えてはいない。妹と共に屋敷に保護された。メイドとして日々を過ごしながらぼんやりと記憶に残るただの鹿だった頃、親切にしてくれた温かい人間と再び会える時を待っている。"
+            },
+
+
+            /* CAST 21 */
+
+            {
+                image: "images/cast/cast21.png",
+                name: "サーシャ",
+                role: "家事妖精",
+                type: "maid",
+                profile: "元の人間だった頃の記憶は無く、亡霊として憂いながら墓場を彷徨っていたところふと現れた屋敷を見つけ住み着いた。憂いは消えず常に儚さがある、家事は得意だがたまに失敗をしてワタワタしてる場面も"
+            },
+
+
+            /* CAST 22 */
+
+            {
+                image: "images/cast/cast22.png",
+                name: "No.098",
+                role: "執事・書庫管理人",
+                type: "butler",
+                profile: "冷静沈着で、感情の起伏はほとんど見せず、礼節を何より重んじる。無駄な言葉を嫌い、淡々と職務を遂行する姿は機械的とすら形容されるが、それは人間としての「理性」を貫くための彼なりの矜持である。しかし“ある一冊”に関わる話題となると、彼の目は異様な熱を帯び、まるで内側から別の人格が浮かび上がったかのような口調になる。その瞬間、どこか異様な狂気を孕んだ気配が漂う。"
+            },
+
+
+            /* CAST 23 */
+
+            {
+                image: "images/cast/cast23.png",
+                name: "mono",
+                role: "メイド見習い",
+                type: "maid",
+                profile: "居場所を失くして彷徨っていた所を拾ってもらい、住み込みで働くように。卑屈がすぎており、数分置きに謝罪する様が目立つ。一度あの世を彷徨った影響で、本来見えない「何か」と友達になった。"
+            },
+
+
+            /* CAST 24 */
+
+            {
+                image: "images/cast/cast24.png",
+                name: "alma",
+                role: "薬師メイド",
+                type: "maid",
+                profile: "かつて屋敷に迷い込み、現世へと戻る方法を探していたが、戻りたいと思っていた理由を忘れ、手段が目的となっていたことに気づき、探すのを辞めた。薬師といってもTombveilの住人たちは異常が通常、不健康で健康であるため、たまに迷い込んだ動物たち（ヒトを含む）の介抱をするくらいである。"
+            },
+
+
+            /* CAST 25 */
+
+            {
+                image: "images/cast/cast25.png",
+                name: "Jowd",
+                role: "執事・雑務",
+                type: "butler",
+                profile: "「この絵はどこかって？うーん、俺にも分からないんだ。でも、忘れちゃいけない場所だった気がしてね。」そう返答すると、彼はまた筆を動かし始めた。少しでも記憶を、記録として残しておくために。"
+            },
+
+
+            /* CAST 26 */
+
+            {
+                image: "images/cast/cast26.png",
+                name: "Emma",
+                role: "墓守メイド",
+                type: "maid",
+                profile: "記憶がなく気が付くとTombveilでメイドとして働いていた。失敗を恐れていてなんとか巻き返そうと動くが余計に状況を悪化させる。よく怒られており、不器用すぎて簡単な雑用、掃除くらいしかできないことを気にしている。割った食器、窓の枚数はもう覚えていない。窓はもう見たくないので地下倉庫によくいる。"
+            },
+
+
+            /* CAST 27 */
+
+            {
+                image: "images/cast/cast27.png",
+                name: "Null",
+                role: "警備人形メイド",
+                type: "maid",
+                profile: "メイド長からお屋敷・墓地の警備を任されているメイド。元々持ち主から大切にされていた球体関節人形、大切にされていたのもあってかある日心が宿る。持ち主が亡くなったあと彼の墓がある墓地とそれを管理してくれている屋敷の警備している。人形であるからこそ人の感情に興味を示しており、その中でも思い出や大切な物を大事にしている人を尊敬し好感を持つ。"
+            },
+
+
+            /* CAST 28 */
+
+            {
+                image: "images/cast/cast28.png",
+                name: "Chermy",
+                role: "家事メイド",
+                type: "maid",
+                profile: "チンチラの特徴を持つ幽霊。放浪していた所を屋敷の奥深くに満ちた静寂に手を差し伸べられた。以来、メイドとして悠々自適に日々を過ごしている。現と夢のあわいを生きているような、まどろんだ雰囲気を持っている。砂浴びとふかふかのシーツが大好きで、スカートを砂まみれにしがち。無意識のうちに眠ってしまうことがあり、よく箒を持ったまま立ち寝している。"
+            },
+
+
+            /* CAST 29 */
+
+            {
+                image: "images/cast/cast29.png",
+                name: "ティンダロスちゃん",
+                role: "猟犬メイド",
+                type: "maid",
+                profile: "何かを追いかけて、気づいたらお屋敷にいた。なんだかんだ居心地が良いらしく順応して住み着いている。お屋敷のお掃除と悪霊狩りに従事。"
+            },
+
+
+            /* CAST 30 */
+
+            {
+                image: "images/cast/cast30.png",
+                name: "非公開情報",
+                role: "非公開情報",
+                type: "maid",
+                profile: "「このページにはまだ何も書かれていないようだ...」"
+            },
+
+
+            /* CAST 31 */
+
+            {
+                image: "images/cast/cast31.png",
+                name: "非公開情報",
+                role: "非公開情報",
+                type: "maid",
+                profile: "「このページにはまだ何も書かれていないようだ...」"
+            },
+
+
+            /* CAST 32 */
+
+            {
+                image: "images/cast/cast32.png",
+                name: "非公開情報",
+                role: "非公開情報",
+                type: "maid",
+                profile: "「このページにはまだ何も書かれていないようだ...」"
+            }
+
+        ];
+
+
+        /* =================================================
+           CURRENT BOOK
+        ================================================= */
+
+        let currentBook = 0;
+
+
+        /* =================================================
+           FILTER CAST
+        ================================================= */
+
+        function filterCast(type, button) {
+
+            const cards =
+                document.querySelectorAll(
+                    ".book-card"
+                );
+
+
+            const buttons =
+                document.querySelectorAll(
+                    ".cast-filter-button"
+                );
+
+
+            buttons.forEach(
+                function (btn) {
+
+                    btn.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            cards.forEach(
+                function (card) {
+
+                    const cardType =
+                        card.dataset.type;
+
+
+                    if (
+                        type === "all" ||
+                        cardType === type
+                    ) {
+
+                        card.style.display =
+                            "";
+
+                    } else {
+
+                        card.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           OPEN BOOK
+        ================================================= */
+
+        function openBook(index) {
+
+            currentBook = index;
+
+            updateBook();
+
+
+            const overlay =
+                document.getElementById(
+                    "bookOverlay"
+                );
+
+
+            overlay.classList.add(
+                "active"
+            );
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        /* =================================================
+           UPDATE BOOK
+        ================================================= */
+
+        function updateBook() {
+
+            const data =
+                castData[currentBook];
+
+
+            document.getElementById(
+                "bookPhoto"
+            ).src =
+                data.image;
+
+
+            document.getElementById(
+                "bookPhoto"
+            ).alt =
+                data.name;
+
+
+            document.getElementById(
+                "bookName"
+            ).textContent =
+                data.name;
+
+
+            document.getElementById(
+                "bookRole"
+            ).textContent =
+                data.role;
+
+
+            document.getElementById(
+                "bookProfile"
+            ).textContent =
+                data.profile;
+
+
+            document.getElementById(
+                "bookNumber"
+            ).textContent =
+                String(
+                    currentBook + 1
+                ).padStart(
+                    2,
+                    "0"
+                );
+
+
+            document.getElementById(
+                "bookPageNumber"
+            ).textContent =
+                "PAGE " +
+                String(
+                    currentBook + 1
+                ).padStart(
+                    2,
+                    "0"
+                );
+
+        }
+
+
+        /* =================================================
+           CLOSE BOOK
+        ================================================= */
+
+        function closeBook() {
+
+            const overlay =
+                document.getElementById(
+                    "bookOverlay"
+                );
+
+
+            overlay.classList.remove(
+                "active"
+            );
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        /* =================================================
+           PREVIOUS
+        ================================================= */
+
+        function previousBook() {
+
+            currentBook--;
+
+
+            if (
+                currentBook < 0
+            ) {
+
+                currentBook =
+                    castData.length - 1;
+
+            }
+
+
+            updateBook();
+
+        }
+
+
+        /* =================================================
+           NEXT
+        ================================================= */
+
+        function nextBook() {
+
+            currentBook++;
+
+
+            if (
+                currentBook >=
+                castData.length
+            ) {
+
+                currentBook = 0;
+
+            }
+
+
+            updateBook();
+
+        }
+
+
+        /* =================================================
+           BACKDROP CLICK
+        ================================================= */
+
+        function overlayClick(event) {
+
+            if (
+                event.target.id ===
+                "bookOverlay"
+            ) {
+
+                closeBook();
+
+            }
+
+        }
+
+
+        /* =================================================
+           KEYBOARD
+        ================================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+
+                const overlay =
+                    document.getElementById(
+                        "bookOverlay"
+                    );
+
+
+                if (
+                    !overlay.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    closeBook();
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowLeft"
+                ) {
+
+                    previousBook();
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowRight"
+                ) {
+
+                    nextBook();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
